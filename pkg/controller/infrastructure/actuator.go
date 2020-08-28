@@ -50,7 +50,8 @@ func newTerraformer(restConfig *rest.Config, purpose, namespace, name string) (t
 	}
 
 	return tf.
-		SetTerminationGracePeriodSeconds(630).
+		SetActiveDeadlineSeconds(600).
+		SetTerminationGracePeriodSeconds(300).
 		SetDeadlineCleaning(5 * time.Minute).
 		SetDeadlinePod(15 * time.Minute), nil
 }

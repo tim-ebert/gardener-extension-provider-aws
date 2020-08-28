@@ -21,12 +21,13 @@ import (
 	"strings"
 	"time"
 
-	kutil "github.com/gardener/gardener/pkg/utils/kubernetes"
 	corev1 "k8s.io/api/core/v1"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/controller/controllerutil"
+
+	kutil "github.com/gardener/gardener/pkg/utils/kubernetes"
 )
 
 const (
@@ -52,6 +53,12 @@ func (t *terraformer) SetTerminationGracePeriodSeconds(terminationGracePeriodSec
 	return t
 }
 
+// SetActiveDeadlineSeconds configures the .spec.activeDeadlineSeconds for the Terraformer pod.
+func (t *terraformer) SetActiveDeadlineSeconds(activeDeadlineSeconds int64) Terraformer {
+	t.activeDeadlineSeconds = activeDeadlineSeconds
+	return t
+}
+
 // SetDeadlineCleaning configures the deadline while waiting for a clean environment.
 func (t *terraformer) SetDeadlineCleaning(d time.Duration) Terraformer {
 	t.deadlineCleaning = d
@@ -61,6 +68,12 @@ func (t *terraformer) SetDeadlineCleaning(d time.Duration) Terraformer {
 // SetDeadlinePod configures the deadline while waiting for the Terraformer apply/destroy pod.
 func (t *terraformer) SetDeadlinePod(d time.Duration) Terraformer {
 	t.deadlinePod = d
+	return t
+}
+
+// SetLogLevel set the log level of the Terraformer pod.
+func (t *terraformer) SetLogLevel(level string) Terraformer {
+	t.logLevel = level
 	return t
 }
 

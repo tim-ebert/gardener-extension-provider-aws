@@ -2,7 +2,7 @@ images:
 - name: terraformer
   sourceRepository: github.com/gardener/terraformer
   repository: eu.gcr.io/gardener-project/gardener/terraformer
-  tag: "v1.3.0"
+  tag: "v2.0.0-dev-b4ef267be9162390e179d61102f02a47b003da8f"
 
 - name: cloud-controller-manager
   sourceRepository: github.com/kubernetes/kubernetes

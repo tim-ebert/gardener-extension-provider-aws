@@ -3,16 +3,23 @@ module github.com/gardener/gardener-extension-provider-aws
 go 1.14
 
 require (
+	github.com/Masterminds/goutils v1.1.0 // indirect
+	github.com/Masterminds/sprig v2.22.0+incompatible // indirect
 	github.com/ahmetb/gen-crd-api-reference-docs v0.1.5
 	github.com/aws/aws-sdk-go v1.21.10
 	github.com/coreos/go-systemd v0.0.0-20190719114852-fd7a80b32e1f
+	github.com/cyphar/filepath-securejoin v0.2.2 // indirect
+	github.com/dsnet/compress v0.0.1 // indirect
 	github.com/frankban/quicktest v1.9.0 // indirect
 	github.com/gardener/etcd-druid v0.3.0
 	github.com/gardener/gardener v1.9.0
 	github.com/gardener/machine-controller-manager v0.33.0
 	github.com/go-logr/logr v0.1.0
 	github.com/gobuffalo/packr/v2 v2.8.0
+	github.com/gobwas/glob v0.2.3 // indirect
 	github.com/golang/mock v1.4.4-0.20200731163441-8734ec565a4d
+	github.com/golang/snappy v0.0.1 // indirect
+	github.com/mitchellh/copystructure v1.0.0 // indirect
 	github.com/nwaples/rardecode v1.1.0 // indirect
 	github.com/onsi/ginkgo v1.11.0
 	github.com/onsi/gomega v1.8.1
@@ -22,6 +29,7 @@ require (
 	github.com/spf13/cobra v0.0.6
 	github.com/spf13/pflag v1.0.5
 	github.com/ulikunitz/xz v0.5.7 // indirect
+	github.com/xi2/xz v0.0.0-20171230120015-48954b6210f8 // indirect
 	k8s.io/api v0.17.11
 	k8s.io/apiextensions-apiserver v0.17.11
 	k8s.io/apimachinery v0.17.11
@@ -38,6 +46,7 @@ require (
 )
 
 replace (
+	github.com/gardener/gardener => github.com/timebertt/gardener v0.0.0-20200826153722-fa1246364a6c
 	github.com/prometheus/client_golang => github.com/prometheus/client_golang v0.9.2
 	k8s.io/api => k8s.io/api v0.17.9
 	k8s.io/apiextensions-apiserver => k8s.io/apiextensions-apiserver v0.17.9

@@ -55,6 +55,8 @@ type terraformer struct {
 	variablesEnvironment map[string]string
 	configurationDefined bool
 
+	logLevel                      string
+	activeDeadlineSeconds         int64
 	terminationGracePeriodSeconds int64
 
 	deadlineCleaning time.Duration
@@ -88,7 +90,9 @@ const (
 
 // Terraformer is the Terraformer interface.
 type Terraformer interface {
+	SetLogLevel(string) Terraformer
 	SetVariablesEnvironment(tfVarsEnvironment map[string]string) Terraformer
+	SetActiveDeadlineSeconds(int64) Terraformer
 	SetTerminationGracePeriodSeconds(int64) Terraformer
 	SetDeadlineCleaning(time.Duration) Terraformer
 	SetDeadlinePod(time.Duration) Terraformer
